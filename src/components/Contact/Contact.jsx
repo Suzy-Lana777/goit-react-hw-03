@@ -1,6 +1,6 @@
-import css from './Options.module.css';
+import css from './Contact.module.css';
 
-export default function Options({ clickButton, totalFeedback }) {
+export default function Contact({ clickButton, totalFeedback }) {
   return (
     <div>
       <button className={css.button} onClick={() => clickButton('good')}>
