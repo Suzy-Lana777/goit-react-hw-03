@@ -1,29 +1,10 @@
-.container {
-  margin: 0 auto;
-  padding: 0 16px;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.form {
 }
 
-.title {
-  font-size: 36px;
-  letter-spacing: 1.5;
-  margin-bottom: 30px;
+.button {
 }
-.text {
-  font-size: 18px;
-  line-height: 1.5;
+.input {
+  width: 100%;
 }
-.title_span {
-  color: green;
-}
-.span {
-  color: rgb(175, 31, 175);
-}
-
-.icon {
-  padding-right: 10px;
+.label {
 }

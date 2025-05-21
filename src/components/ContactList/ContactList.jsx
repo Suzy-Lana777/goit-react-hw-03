@@ -1,8 +1,14 @@
-import css from './Notification.module.css';
-export default function Notification() {
+import css from './ContactList.module.css';
+import Contact from '../Contact/Contact';
+
+export default function ContactList({ contacts }) {
   return (
-    <div className={css.notification}>
-      <p className={css.text}>No feedback yet! </p>
-    </div>
+    <ul className={css.list}>
+      {contacts.map((contact) => (
+        <li className={css.item} key={contact.id}>
+          <Contact name={contact.name} number={contact.number} />
+        </li>
+      ))}
+    </ul>
   );
 }

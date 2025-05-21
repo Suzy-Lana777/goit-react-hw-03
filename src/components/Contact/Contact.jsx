@@ -1,22 +1,15 @@
 import css from './Contact.module.css';
 
-export default function Contact({ clickButton, totalFeedback }) {
+export default function Contact({ name, number }) {
   return (
     <div>
-      <button className={css.button} onClick={() => clickButton('good')}>
-        Good
+      <div className={css.flex}>
+        <p className={css.h2}>{name}</p>
+        <p className={css.p}>{number}</p>
+      </div>
+      <button className={css.button} type="button">
+        Delete
       </button>
-      <button className={css.button} onClick={() => clickButton('neutral')}>
-        Neutral
-      </button>
-      <button className={css.button} onClick={() => clickButton('bad')}>
-        Bad
-      </button>
-      {totalFeedback > 0 && (
-        <button className={css.button} onClick={() => clickButton('reset')}>
-          Reset
-        </button>
-      )}
     </div>
   );
 }

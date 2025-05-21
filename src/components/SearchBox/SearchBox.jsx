@@ -1,17 +1,13 @@
-import css from './Feedback.module.css';
+import css from './SearchBox.module.css';
 
-export default function Feedback({
-  feedback,
-  totalFeedback,
-  positiveFeedback,
+export default function SearchBox({
+  feedback = { good: 0 },
+  totalFeedback = 0,
+  positiveFeedback = 0,
 }) {
   return (
     <div className={css.feedback}>
       <p className={css.text}>Good: {feedback.good}</p>
-      <p className={css.text}>Neutral: {feedback.neutral}</p>
-      <p className={css.text}>Bad: {feedback.bad}</p>
-      <p className={css.text}>Total: {totalFeedback}</p>
-      <p className={css.list}>Positive feedback: {positiveFeedback}%</p>
     </div>
   );
 }
