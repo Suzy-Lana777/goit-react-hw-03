@@ -2,7 +2,7 @@ import css from './Contact.module.css';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
 
-export default function Contact({ name, number }) {
+export default function Contact({ id, name, number, onDelete }) {
   return (
     <div>
       <div className={css.flex}>
@@ -14,7 +14,7 @@ export default function Contact({ name, number }) {
           <MdPhone className={css.icon} /> {number}
         </p>
       </div>
-      <button className={css.button} type="button">
+      <button className={css.button} type="button" onClick={() => onDelete(id)}>
         Delete
       </button>
     </div>
