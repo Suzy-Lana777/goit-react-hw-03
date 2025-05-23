@@ -4,7 +4,10 @@ import { Formik, Form, Field } from 'formik';
 export default function ContactForm({ onAdd }) {
   return (
     <Formik
-      initialValues={{ name: '', number: '' }}
+      initialValues={{
+        name: '',
+        number: '',
+      }}
       onSubmit={(values, actions) => {
         const newContact = {
           id: Date.now(),
