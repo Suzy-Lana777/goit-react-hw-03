@@ -4,7 +4,7 @@ import { MdPhone } from 'react-icons/md';
 
 export default function Contact({ id, name, number, onDelete }) {
   return (
-    <div>
+    <div className={css.contactWrapper}>
       <div className={css.flex}>
         <p className={css.h2}>
           <BsFillPersonFill className={css.icon} />

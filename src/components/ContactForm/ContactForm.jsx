@@ -1,47 +1,41 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
+import css from './ContactForm.module.css';
 
 const ContactSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, 'Must be at least 3 characters')
-    .max(50, 'Must be 50 characters or less')
-    .required('Required'),
-  number: Yup.string()
-    .min(3, 'Must be at least 3 characters')
-    .max(50, 'Must be 50 characters or less')
-    .required('Required'),
+  name: Yup.string().min(3).max(50).required('Required'),
+  number: Yup.string().min(3).max(50).required('Required'),
 });
 
 export default function ContactForm({ onAdd }) {
   return (
     <Formik
       initialValues={{ name: '', number: '' }}
-      validationSchema={ContactSchema} // ← ❗️ правильна назва
+      validationSchema={ContactSchema}
       onSubmit={(values, actions) => {
-        const newContact = {
+        onAdd({
           id: nanoid(),
           name: values.name,
           number: values.number,
-        };
-        onAdd(newContact);
+        });
         actions.resetForm();
       }}
     >
-      <Form>
-        <label>
+      <Form className={`${css.formWrapper} ${css.form}`}>
+        <label className={css.label}>
           Name:
-          <Field name="name" type="text" />
-          <ErrorMessage name="name" component="div" />
+          <Field name="name" type="text" className={css.input} />
+          <ErrorMessage name="name" component="div" className={css.error} />
         </label>
-        <br />
-        <label>
+        <label className={css.label}>
           Number:
-          <Field name="number" type="text" />
-          <ErrorMessage name="number" component="div" />
+          <Field name="number" type="text" className={css.input} />
+          <ErrorMessage name="number" component="div" className={css.error} />
         </label>
-        <br />
-        <button type="submit">Add Contact</button>
+        <button type="submit" className={css.button}>
+          Add Contact
+        </button>
       </Form>
     </Formik>
   );

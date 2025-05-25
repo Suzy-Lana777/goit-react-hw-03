@@ -42,10 +42,22 @@
 }
 
 body {
-  background-image: url('../public/flowers-5209386_1280.webp');
+  background-image: url('/flowers-5209386_1280.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   margin: 0;
+}
+
+.container {
+  max-width: 335px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
